@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  justify-content: flex-start;
+}
+
+.highscores {
+  line-height: 3;
+}
+
+.counter {
+  justify-content: left;
+}
+
+.p1 {
+  justify-self: center;
+}
+
+.footer {
+  width: 100%;
+  height: 30px;
+  line-height: 25px;
+  color: var(--white);
+  background-color: var(--teal);
+  font-family: var(--helvetica);
+  bottom: 0;
+  text-align: center;
+}
