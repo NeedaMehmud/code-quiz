@@ -27,3 +27,6 @@ WHEN the game is over
 THEN I can save my initials and my score
 ```
 ![image](screenshot.png)
+
+## Github Link
+https://needamehmud2017.github.io/code-quiz/
