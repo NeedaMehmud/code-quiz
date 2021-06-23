@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --teal: #279;
+  --white: #fff;
+  --helvetica: Arial, Helvetica, sans-serif;
+  --light-teal: #38a;
+}
+
 body {
   font-family: Arial;
   margin: 0;
@@ -31,4 +38,77 @@ body {
   font-family: var(--helvetica);
   bottom: 0;
   text-align: center;
+}
+
+.startBtn {
+  font-size: 20px;
+  background-color: var(--teal);
+  font-family: var(--helvetica);
+  color: var(--white);
+  border: 0px;
+  border-radius: 3px;
+  padding: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.submit {
+  font-size: 20px;
+  background-color: var(--teal);
+  font-family: var(--helvetica);
+  color: var(--white);
+  border: 0px;
+  border-radius: 3px;
+  padding: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.gobackBtn {
+  font-size: 20px;
+  background-color: var(--teal);
+  font-family: var(--helvetica);
+  color: var(--white);
+  border: 0px;
+  border-radius: 3px;
+  padding: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.clearHighScoreBtn {
+  font-size: 20px;
+  background-color: var(--teal);
+  font-family: var(--helvetica);
+  color: var(--white);
+  border: 0px;
+  border-radius: 3px;
+  padding: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.submit:hover {
+  background-color: var(--light-teal);
+}
+
+.gobackBtn:hover {
+  background-color: var(--light-teal);
+}
+
+.clearHighScoreBtn:hover {
+  background-color: var(--light-teal);
+}
+
+.startBtn:hover {
+  background-color: var(--light-teal);
+}
+
+.questions {
+}
+
+.answers {
+}
+
+.quizAnswer {
 }
