@@ -1,5 +1,8 @@
 # 04 Web APIs: Code Quiz
 
+This project meets most of the ACs below. The only part where I was unsuccessful was not being able to move on to the next question and saving the score. 
+
+
 ## User Story
 
 ```
@@ -23,3 +26,4 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and my score
 ```
+![image](screenshot.png)
