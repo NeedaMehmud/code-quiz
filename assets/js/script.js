@@ -34,13 +34,41 @@ function updateTimerDisplay() {
     }
 }
 
-function showResults(){
+function showResults() {
 
 }
+
+// ==== Questions ==== //
 
 var first_q = "String values must be enclosed within ___ when being assigned to variables."
 var second_q = "A very useful tool during development and debugging for printing content to the debugger is: "
 var third_q = "Which one of these is a JavaScript package manager?"
-var questionArray = [first_q, second_q, third_q]
+var questionArray = [first_q, second_q, third_q];
 
+// ==== Answers ==== //
+var firstAnswer = {
+    optionA: "commas",
+    optionB: "curly brackets",
+    optionC: "quotes",
+    optionD: "parenthesis"
+}
+var secondAnswer = {
+    optionA: "javaScript",
+    optionB: "terminal/bash",
+    optionC: "console log",
+    optionD: "dev tools"
+}
+
+var thirdAnswer = {
+    optionA: "node.js",
+    optionB: "typeScript",
+    optionC: "npm",
+    optionD: "bootstrap"
+}
+var answerArray = [firstAnswer, secondAnswer, thirdAnswer];
+// ==== Correct Answers ==== //
+var correctAnsA = firstAnswer.optionC;
+var correctAnsB = secondAnswer.optionD;
+var correctAnsC = thirdAnswer.optionC;
+var correctAnswersArray = [correctAnsA, correctAnsB, correctAnsC]
 startQuizButton.addEventListener("click", startTimer);
