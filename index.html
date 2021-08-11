@@ -1,44 +1,91 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Code Quiz Challenge</title>
-    <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-
+    <title>Code Quiz</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <main>
-        <section>
-            <a class="highscoresLink" id="highscores" href="high-scores.html">
-                <h3>View Highscores</h3>
-            </a>
-        </section>
-        <aside>
-            <h3 class="counter">Time: <span id="timer"></span></h3>
-        </aside>
-        <section class="p1">
-            <h1>Code Quiz Challenge</h1>
-            <p>
-                Try to answer the following code-related questions within the time limit.
-                Keep in mind that incorrect answers will be penalize your score time by ten seconds!
-            </p>
-        </section>
-        <a class="quiz" id="quiz-page" href="./quiz.html">
-            <button id="start-quiz" class="startBtn">Start Quiz
-            </button>
-        </a>
+    <div class="row header">
+        <div class="col">
+            <div>
+                <span id="highscore">View Highscores</span>
+                <span id="timer">Time: 70 seconds</span>
+            </div>
+        </div>
+    </div>
 
-        <!-- Main Footer-->
-        <footer>
-            <!-- footer content in here -->
-            &copy; 2021 Needa Mehmud
-        </footer>
-    </main>
-    <script src="./assets/js/script.js"></script>
+    <div class="container">
+        <div class="container jumbotron">
+            <div class="row">
+                <div class="col-md-9 9col-sm-10">
+                    <h1 class="display-3">Test Your JavaScript Knowledge!</h1>
+                    <hr class="my-4">
+                    <br>
+                    <p class="quiz-intro">
+                        Welcome to the JavaScript Quiz!
+                        This is a timed quiz of 70 seconds.
+                        When an incorrect answer is selected, you will be docked 10 seconds from your time.
+                        Your time left when all questions are answered will be your final score.
+                        Answer the questions fast, but correctly!
+                    </p>
+                    <br>
+                    <button type="button" class="btn btn-primary start-quiz-btn justify-content-end">Start Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="row quiz-section justify-content-center">
+            <div class="col-md-8">
+                <h3 class="mb-5 question"></h3>
+                <button type="button" class="btn btn-warning correctAnsA"></button>
+                <button type="button" class="btn btn-warning correctAnsB"></button>
+                <button type="button" class="btn btn-warning correctAnsC"></button>
+                <span id="right-or-wrong" class="mt-5"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="initials-section">
+        <div class="row margin justify-content-center">
+            <div class="col-md-6">
+                <h3>All done!</h3>
+                <p>Enter your name below:</p>
+                <input type="text" class="mt-3" id="initials" name="initials" placeholder="initials"><br>
+                <button type="submit" class="btn btn-warning submit-btn">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container highscores-section">
+        <div class="row margin justify-content-center">
+            <div class="highscores-div col-md-8">
+                <h3>Highscores</h3>
+                <p>click on View Highscores on the top left of page to view all previous history</p>
+                <div class="user-scores mt-5">
+                </div>
+                <button type="button" class="btn btn-warning highscore-btn challenge-again">Challenge Again</button>
+                <button type="button" class="btn btn-warning highscore-btn clear-highscores ml-3">Clear
+                    Highscores</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="Assets/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

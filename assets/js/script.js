@@ -1,42 +1,15 @@
-var startQuizButton = document.querySelector("#start-quiz");
-var timerClock = document.querySelector("#timer");
-var question = document.querySelector("#question");
-var answer1 = document.querySelector("#answer1");
-var answer2 = document.querySelector("#answer2");
-var answer3 = document.querySelector("#answer3");
-var answer4 = document.querySelector("#answer4");
-var quizSection = document.querySelector("#quiz-section");
-var individualResult = document.querySelector("#individual-results");
-var initialsSection = document.querySelector("#initials-section");
-var submitButton = document.querySelector("#submit-button");
-var highscoreSection = document.querySelector("#highscores-section");
-var viewHighscores = document.querySelector("#highscore");
-
-
-var timerCount = 75;
-//default value of the timer
-timerClock.innerHTML = timerCount;
-var idTimer = null;
-var highScores = []
-var results = []
-const output = [];
-
-function startTimer() {
-    idTimer = setInterval(updateTimerDisplay, 1000);
-    console.log('inside startTimer')
-}
-
-function updateTimerDisplay() {
-    timerCount--
-    timerClock.innerHTML = timerCount;
-    if (timerCount === 0) {
-        clearInterval(idTimer);
-    }
-}
-
-function showResults() {
-
-}
+var startQuizButton = document.querySelector(".start-quiz");
+var timerClock = document.querySelector(".timer");
+var question = document.querySelector(".question");
+var firstAnswer = document.querySelector(".answer1");
+var secondAnswer = document.querySelector(".answer2");
+var thirdAnswer = document.querySelector(".answer3");
+var quizSection = document.querySelector(".quiz-section");
+var individualResult = document.querySelector(".individual-results");
+var initialsSection = document.querySelector(".initials-section");
+var submitButton = document.querySelector(".submit-button");
+var highscoreSection = document.querySelector(".highscores-section");
+var viewHighscores = document.querySelector(".highscore");
 
 // ==== Questions ==== //
 
@@ -118,7 +91,7 @@ function startTimer(){
 quizSection.addEventListener("click", determineCorrectAnswer)
 
 function determineCorrectAnswer(event){
-if(event.target.matches("#btn-warning")){
+if(event.target.matches(".btn-warning")){
     var chosenAnswer = event.target.textContent;
     individualResult.textContent = " ";
     individualResult.style.display = "block";
@@ -138,7 +111,7 @@ return secondsLeft;
 
 
 quizSection.addEventListener("click", function(event){
-if(event.target.matches("#btn-warning")){
+if(event.target.matches(".btn-warning")){
     goToNextQuestion();
 }})
 
@@ -146,26 +119,26 @@ submitButton.addEventListener("click", function(event){
 event.preventDefault();
 newUser();        
     initialsSection.style.display = "none";
-    document.querySelector("#highscores-section").style.display = "block";
-    document.querySelector("#user-scores").style.display = "block";
+    document.querySelector(".highscores-section").style.display = "block";
+    document.querySelector(".user-scores").style.display = "block";
 })
 
 
 function newUser() {
-var userInitial = document.querySelector("#initials").value;
+var userInitial = document.querySelector(".initials").value;
 if (userInitial === "") {
     userInitial = "anonymous";
 } 
     localStorage.setItem(userInitial, secondsLeft);
-    document.querySelector("#user-scores").textContent = " ";
+    document.querySelector(".user-scores").textContent = " ";
     var p = document.createElement("p");
     p.textContent = userInitial + ": " + secondsLeft;
-    document.querySelector("#user-scores").appendChild(p);    
+    document.querySelector(".user-scores").appendChild(p);    
 
 }
 
 
-document.querySelector("#challenge-again").addEventListener("click", function(){
+document.querySelector(".challenge-again").addEventListener("click", function(){
 correctIndex = 0;
 secondsLeft = 70;
 timer.textContent =  "Time: 70 seconds";
@@ -176,10 +149,10 @@ highscoreSection.style.display = "none";
 
 // ==== clear high scores ==== //
 
-document.querySelector("#clear-highscores").addEventListener("click", function(){
+document.querySelector(".clear-highscores").addEventListener("click", function(){
 localStorage.clear();
-document.querySelector("#user-scores").textContent = " ";
-document.querySelector("#user-scores").style.display = "none";
+document.querySelector(".user-scores").textContent = " ";
+document.querySelector(".user-scores").style.display = "none";
 
 });
 
@@ -191,11 +164,11 @@ document.querySelector(".jumbotron").style.display = "none";
 quizSection.style.display = "none";
 initialsSection.style.display = "none";
 highscoreSection.style.display = "block";
-document.querySelector("#user-scores").textContent = " ";
+document.querySelector(".user-scores").textContent = " ";
 for (let i = 0; i< localStorage.length; i++) {
     var p = document.createElement("p");
     var user = localStorage.key(i);
     var scores = localStorage.getItem(localStorage.key(i));
     p.textContent = user + ": " + scores;
-    document.querySelector("#user-scores").appendChild(p);}
+    document.querySelector(".user-scores").appendChild(p);}
 })
