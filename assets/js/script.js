@@ -96,10 +96,10 @@ if(event.target.matches(".btn-warning")){
     individualResult.textContent = " ";
     individualResult.style.display = "block";
         if (chosenAnswer === correctAnswersArray[correctIndex]){
-            individualResult.textContent = "Correct!!!";
+            individualResult.textContent = "Correct!";
             setTimeout(function(){ individualResult.style.display = "none"}, 500);
         } else {
-            individualResult.textContent = "Oooops..."
+            individualResult.textContent = "Oooops!"
             setTimeout(function(){ individualResult.style.display = "none"}, 500);
             secondsLeft -= 10;
             timer.textContent =  "Time: " + secondsLeft + " seconds";
