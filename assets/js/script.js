@@ -23,28 +23,25 @@ var firstAnswer = {
     optionA: "commas",
     optionB: "curly brackets",
     optionC: "quotes",
-    optionD: "parenthesis"
 }
 console.log(firstAnswer)
 
 var secondAnswer = {
-    optionA: "javaScript",
+    optionA: "dev tools",
     optionB: "terminal/bash",
     optionC: "console log",
-    optionD: "dev tools"
 }
 
 var thirdAnswer = {
     optionA: "node.js",
     optionB: "typeScript",
     optionC: "npm",
-    optionD: "bootstrap"
 }
 var answerArray = [firstAnswer, secondAnswer, thirdAnswer];
 
 // ==== Correct Answers ==== //
 var correctAnsA = firstAnswer.optionC;
-var correctAnsB = secondAnswer.optionD;
+var correctAnsB = secondAnswer.optionA;
 var correctAnsC = thirdAnswer.optionC;
 var correctAnswersArray = [correctAnsA, correctAnsB, correctAnsC]
 
@@ -69,7 +66,7 @@ function goToNextQuestion() {
     } else {
         question.textContent = questionArray[correctIndex];
         firstAnswer.textContent = correctAnswersArray[correctIndex].optionC;
-        secondAnswer.textContent = correctAnswersArray[correctIndex].optionD;
+        secondAnswer.textContent = correctAnswersArray[correctIndex].optionA;
         thirdAnswer.textContent = correctAnswersArray[correctIndex].optionC;
     }
 }
