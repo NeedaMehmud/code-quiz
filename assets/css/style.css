@@ -4,17 +4,17 @@ body {
 }
 
 .header {
-  background-color: #3ca9db;
+  background-color: #3cdba3;
   padding: 15px 50px;
   font-weight: 700;
 }
 
-.timer {
+#timer {
   float: right;
 }
 
-.highscore:hover {
-  color: #837f0c;
+#highscore:hover {
+  color: #ecf0e3;
 }
 
 .jumbotron {
@@ -49,14 +49,14 @@ h1 {
   display: block !important;
   margin: 15px 0;
   text-align: left;
-  background-color: #3ca9db;
+  background-color: #3cdba3;
   border: none;
   color: black;
   font-weight: 500;
 }
 
 .btn:hover {
-  background-color: #3ca9db;
+  background-color: #3cdba3;
   color: black;
 }
 
@@ -64,11 +64,13 @@ h1 {
   display: none;
 }
 
+/* initials page */
+
 .initials-section {
   display: none;
 }
 
-.initials:focus {
+#initials:focus {
   border: none !important;
 }
 
