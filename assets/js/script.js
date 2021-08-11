@@ -38,4 +38,9 @@ function showResults(){
 
 }
 
+var first_q = "String values must be enclosed within ___ when being assigned to variables."
+var second_q = "A very useful tool during development and debugging for printing content to the debugger is: "
+var third_q = "Which one of these is a JavaScript package manager?"
+var questionArray = [first_q, second_q, third_q]
+
 startQuizButton.addEventListener("click", startTimer);
