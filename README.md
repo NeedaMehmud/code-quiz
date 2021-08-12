@@ -1,7 +1,6 @@
 # 04 Web APIs: Code Quiz
 
-This project meets most of the ACs below. The only part where I was unsuccessful was not being able to move on to the next question and saving the score. 
-
+This project meets most of the ACs below.
 
 ## User Story
 
