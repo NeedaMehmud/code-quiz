@@ -13,39 +13,36 @@ var viewHighscores = document.querySelector("#highscore");
 
 // ==== Questions ==== //
 
-var first_q = "String values must be enclosed within ___ when being assigned to variables."
-var second_q = "A very useful tool during development and debugging for printing content to the debugger is: "
-var third_q = "Which one of these is a JavaScript package manager?"
-var questionArray = [first_q, second_q, third_q];
+var questions = [
+    {
+        question: "String values must be enclosed within ___ when being assigned to variables.",
+        choices: {
+            a: "commas",
+            b: "curly brackets",
+            c: "quotes"
+        },
+        correctAnswer: "c"
+    }, 
+    {
+        question: "A very useful tool during development and debugging for printing content to the debugger is: ",
+        choices: {
+            a: "dev tools",
+            b: "terminal/bash",
+            c: "console log"
+        },
+        correctAnswer: "c"
+    },
+    {
+        question: "Which one of these is a NodeJS package manager?",
+        choices: {
+            a: "node.js",
+            b: "TypeScript",
+            c: "npm"
+        },
+        correctAnswer: "c"
+    }
+]
 
-// ==== Answers ==== //
-var firstAnswer = {
-    optionA: "commas",
-    optionB: "curly brackets",
-    optionC: "quotes",
-}
-console.log(firstAnswer)
-
-var secondAnswer = {
-    optionA: "dev tools",
-    optionB: "terminal/bash",
-    optionC: "console log",
-}
-
-var thirdAnswer = {
-    optionA: "node.js",
-    optionB: "typeScript",
-    optionC: "npm",
-}
-var answerArray = [firstAnswer, secondAnswer, thirdAnswer];
-
-// ==== Correct Answers ==== //
-var correctAnsA = firstAnswer.optionC;
-var correctAnsB = secondAnswer.optionA;
-var correctAnsC = thirdAnswer.optionC;
-var correctAnswersArray = [correctAnsA, correctAnsB, correctAnsC]
-
-// ==== Start Quiz Button ==== //
 startQuizButton.addEventListener("click", startTimer);
 
 startQuizButton.addEventListener("click", function () {
@@ -55,20 +52,20 @@ startQuizButton.addEventListener("click", function () {
 startQuizButton.addEventListener("click", goToNextQuestion)
 
 
-var correctIndex = 0;
+var currentQuestionIndex = 0;
 function goToNextQuestion() {
-    if (correctIndex === questionArray.length - 1) {
-        setTimeout(function () {
-            quizSection.style.display = "none";
-            initialsSection.style.display = "inline";
-        }, 500);
-        setTimeout(function () { clearInterval(timerInterval) }, 500);
-    } else {
-        question.textContent = questionArray[correctIndex];
-        firstAnswer.textContent = correctAnswersArray[correctIndex].optionC;
-        secondAnswer.textContent = correctAnswersArray[correctIndex].optionA;
-        thirdAnswer.textContent = correctAnswersArray[correctIndex].optionC;
-    }
+        if(currentQuestionIndex === questions.length) {
+            setTimeout(function () {
+                quizSection.style.display = "none";
+                initialsSection.style.display = "inline";
+            }, 500);
+            setTimeout(function () { clearInterval(timerInterval) }, 500);
+        } else {
+            question.textContent = questions[currentQuestionIndex].question;
+            firstAnswer.textContent = questions[currentQuestionIndex].choices.a;
+            secondAnswer.textContent = questions[currentQuestionIndex].choices.b;
+            thirdAnswer.textContent = questions[currentQuestionIndex].choices.c;
+        }
 }
 
 var secondsLeft = 70;
@@ -91,10 +88,10 @@ quizSection.addEventListener("click", determineCorrectAnswer)
 
 function determineCorrectAnswer(event) {
     if (event.target.matches(".btn-warning")) {
-        var chosenAnswer = event.target.textContent;
+        var chosenAnswer = event.target.getAttribute("choice");
         individualResult.textContent = " ";
         individualResult.style.display = "block";
-        if (chosenAnswer === correctAnswersArray[correctIndex]) {
+        if (chosenAnswer === questions[currentQuestionIndex].correctAnswer) {
             individualResult.textContent = "Correct!";
             setTimeout(function () { individualResult.style.display = "none" }, 500);
         } else {
@@ -103,7 +100,7 @@ function determineCorrectAnswer(event) {
             secondsLeft -= 10;
             timer.textContent = "Time: " + secondsLeft + " seconds";
         }
-        correctIndex++;
+        currentQuestionIndex++;
     }
     return secondsLeft;
 };
@@ -139,7 +136,7 @@ function newUser() {
 
 
 document.querySelector(".challenge-again").addEventListener("click", function () {
-    correctIndex = 0;
+    currentQuestionIndex = 0;
     secondsLeft = 70;
     timer.textContent = "Time: 70 seconds";
     document.querySelector(".jumbotron").style.display = "block";
