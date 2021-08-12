@@ -1,7 +1,5 @@
 # 04 Web APIs: Code Quiz
 
-This project meets most of the ACs below.
-
 ## User Story
 
 ```
